@@ -2,7 +2,7 @@ package com.gfm.main;
 
 import java.sql.Date;
 
-public class MainAction {
+public class HelloAction {
 
 	  public String execute() {
 	    System.out.print("Value of nmCliente is: " + nmCliente);
