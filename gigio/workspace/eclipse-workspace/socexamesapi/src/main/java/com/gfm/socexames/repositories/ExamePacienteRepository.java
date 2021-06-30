@@ -176,7 +176,7 @@ public class ExamePacienteRepository implements ExamePacienteDao {
 					}
 					rsPaciente = instantiatePaciente(rs);
 				}				
-				rsPaciente.getExamePacienteVO().add(instantiateExamePaciente(rs));				
+				rsPaciente.getExamePaciente().add(instantiateExamePaciente(rs));				
 			}
 			lstPaciente.add(rsPaciente);
 			return lstPaciente;
@@ -216,7 +216,7 @@ public class ExamePacienteRepository implements ExamePacienteDao {
 					rsPaciente = instantiatePaciente(rs);
 				}
 				ExamePaciente exames = instantiateExamePaciente(rs);
-				rsPaciente.getExamePacienteVO().add(exames);
+				rsPaciente.getExamePaciente().add(exames);
 			}
 			return rsPaciente;
 			

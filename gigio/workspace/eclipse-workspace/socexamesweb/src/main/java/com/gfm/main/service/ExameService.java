@@ -8,8 +8,9 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.gfm.main.entities.ExamePaciente;
 import com.gfm.main.entities.Paciente;
+
+import reactor.core.publisher.Mono;
 
 @Service
 public class ExameService {
@@ -30,25 +31,14 @@ public class ExameService {
 	}
 
 	public List<Paciente> listarExame(){
-		List<Paciente> monoResponse =  webClient.get()
+		Mono<List<Paciente>> monoResponse =  webClient.get()
 				.uri("/listar")
 				.retrieve()
-				.bodyToMono(new ParameterizedTypeReference<List<Paciente>>() {})
-				.block();
+				.bodyToMono(new ParameterizedTypeReference<List<Paciente>>() {});
+		List<Paciente> pacientes = monoResponse.block();
 
-		return monoResponse;		
+		return pacientes;		
 		
 	}
-	
-	public ExamePaciente exameById(Integer idExame) {
-		ExamePaciente monoResponse =  webClient.get()
-				.uri("/"+ idExame)
-				.retrieve()
-				.bodyToMono(ExamePaciente.class)
-				.block();
-
-		return monoResponse;	
-	}
-	
 	
 }

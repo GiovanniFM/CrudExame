@@ -18,10 +18,9 @@
 						<s:property value="#exameVar.nmExame" />
 					</s:iterator></td>
 			</tr>
-
 		</s:iterator>
-
 	</table>
-
+	Lista completa:
+	<s:property value="examesRetorno" />
 </body>
 </html>

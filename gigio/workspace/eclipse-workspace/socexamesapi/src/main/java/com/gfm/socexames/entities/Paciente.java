@@ -45,7 +45,7 @@ public class Paciente {
 		this.nmpaciente = nomePaciente;
 	}
 
-	public List<ExamePaciente> getExamePacienteVO() {
+	public List<ExamePaciente> getExamePaciente() {
 		return examePaciente;
 	}
 

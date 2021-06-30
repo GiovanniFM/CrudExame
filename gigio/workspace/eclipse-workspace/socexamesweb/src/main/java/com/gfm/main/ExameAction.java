@@ -11,12 +11,14 @@ public class ExameAction {
 	public String execute() {
 		ExameService exame = new ExameService();
 		pacientes = exame.listarExame();
-		System.out.println(pacientes.toString());
+		examesRetorno = pacientes.toString();
+		System.out.println(examesRetorno);
 
 		return "success";
 	}
 	
-	private List<Paciente> pacientes = new ArrayList<Paciente>();;
+	private List<Paciente> pacientes = new ArrayList<Paciente>();
+	private String examesRetorno;
 	
 
 	public List<Paciente> getPacientes() {
@@ -25,6 +27,14 @@ public class ExameAction {
 
 	public void setPacientes(List<Paciente> paciente) {
 		this.pacientes = paciente;
+	}
+
+	public String getExamesRetorno() {
+		return examesRetorno;
+	}
+
+	public void setExamesRetorno(String examesRetorno) {
+		this.examesRetorno = examesRetorno;
 	}
 
 }

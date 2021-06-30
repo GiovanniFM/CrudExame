@@ -41,7 +41,7 @@ public class ExamePacienteController {
 	@PostMapping(value = "/inserir")
 	public ResponseEntity<Paciente> insert(@RequestBody Paciente paciente){
 		ExamePacienteService examePacienteService = new ExamePacienteService();
-		examePacienteService.insertExames(paciente.getIdPaciente(), paciente.getExamePacienteVO());		
+		examePacienteService.insertExames(paciente.getIdPaciente(), paciente.getExamePaciente());		
 		return ResponseEntity.ok().body(paciente);
 	}
 	
