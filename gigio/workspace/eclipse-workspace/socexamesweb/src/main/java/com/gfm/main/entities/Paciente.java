@@ -1,22 +1,34 @@
-package com.gfm.socexames.common;
+package com.gfm.main.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
-public class PacienteVO {
+public class Paciente {
 	
-	private Integer idPaciente;
+	private Integer idPaciente; 
 	private String nmpaciente;	
+	private List<ExamePaciente> examePaciente = new ArrayList<ExamePaciente>();
 	
-	public PacienteVO() {
+	public Paciente() {
 		super();
 	}
 	
-    public PacienteVO(Integer idpaciente, String nomePaciente) {
+    public Paciente(Integer idpaciente, String nomePaciente, List<ExamePaciente> examePaciente) {
         super();
         this.idPaciente = idpaciente;
         this.nmpaciente = nomePaciente;  
+        this.examePaciente = examePaciente;
     }	    
+    
+    public Paciente(Integer idpaciente, String nomePaciente) {
+        super();
+        this.idPaciente = idpaciente;
+        this.nmpaciente = nomePaciente;  
+        
+    }	    
+        
     
 	public Integer getIdPaciente() {
 		return idPaciente;
@@ -32,6 +44,13 @@ public class PacienteVO {
 	public void setNmPaciente(String nomePaciente) {
 		this.nmpaciente = nomePaciente;
 	}
+	
+	
+	
+
+	public List<ExamePaciente> getExamePaciente() {
+		return examePaciente;
+	}
 
 	@Override
 	public int hashCode() {
@@ -46,14 +65,16 @@ public class PacienteVO {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		PacienteVO other = (PacienteVO) obj;
+		Paciente other = (Paciente) obj;
 		return Objects.equals(idPaciente, other.idPaciente) && Objects.equals(nmpaciente, other.nmpaciente);
 	}
-
+	
 	@Override
 	public String toString() {
-		return "PacienteVO [idPaciente=" + idPaciente + ", idPaciente=" + nmpaciente + "]";
+		return "Paciente [idPaciente=" + idPaciente + ", nmpaciente=" + nmpaciente + ", examePaciente=" + examePaciente
+				+ "]";
 	}
+	
 	
 	
 

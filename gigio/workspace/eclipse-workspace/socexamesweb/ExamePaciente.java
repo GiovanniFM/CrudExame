@@ -1,34 +1,29 @@
-package com.gfm.socexames.common;
+package com.gfm.socexames.entities;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class ExamePacienteVO{
+public class ExamePaciente{
 
 	private Integer idexamepaciente;
 
-	private String nomeExame;
-	private Date dataExame;
+	private String nmExame;
+	private Date dtExame;
 	private String observacao;
-	private String resultadoExame;
+	private String resultadoExame;	
 	
-	private PacienteVO pacienteVO;
-	
-	
-	public ExamePacienteVO(Integer idexamepaciente, String nomeExame, Date dataExame, String observacao,
-			String resultadoExame, PacienteVO pacienteVO) {
+	public ExamePaciente(Integer idexamepaciente, String nomeExame, Date dataExame, String observacao,
+			String resultadoExame) {
 		
 		this.idexamepaciente= idexamepaciente;
-		this.nomeExame = nomeExame;
-		this.dataExame = dataExame;
+		this.nmExame = nomeExame;
+		this.dtExame = dataExame;
 		this.observacao = observacao;
 		this.resultadoExame = resultadoExame;
-		this.pacienteVO = pacienteVO;
 	}	
 	
 	public String getNomeExame() {
-		return nomeExame;
+		return nmExame;
 	}
 	public Integer getIdexamepaciente() {
 		return idexamepaciente;
@@ -39,13 +34,13 @@ public class ExamePacienteVO{
 	}
 
 	public void setNomeExame(String nomeExame) {
-		this.nomeExame = nomeExame;
+		this.nmExame = nomeExame;
 	}
 	public Date getDataExame() {
-		return dataExame;
+		return dtExame;
 	}
 	public void setDataExame(Date dataExame) {
-		this.dataExame = dataExame;
+		this.dtExame = dataExame;
 	}
 	public String getObservacao() {
 		return observacao;
@@ -60,13 +55,6 @@ public class ExamePacienteVO{
 		this.resultadoExame = resultadoExame;
 	}
 
-	public PacienteVO getPaciente() {
-		return pacienteVO;
-	}
-
-	public void setPaciente(PacienteVO pacienteVO) {
-		this.pacienteVO = pacienteVO;
-	}
 
 	@Override
 	public int hashCode() {
@@ -81,15 +69,14 @@ public class ExamePacienteVO{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ExamePacienteVO other = (ExamePacienteVO) obj;
+		ExamePaciente other = (ExamePaciente) obj;
 		return idexamepaciente == other.idexamepaciente;
 	}
 
 	@Override
 	public String toString() {
-		return "ExamePacienteVO [idexamepaciente=" + idexamepaciente + ", nomeExame=" + nomeExame + ", dataExame="
-				+ dataExame + ", observacao=" + observacao + ", resultadoExame=" + resultadoExame + ", pacienteVO="
-				+ pacienteVO + "]";
+		return "ExamePaciente [idexamepaciente=" + idexamepaciente + ", nmExame=" + nmExame + ", dtExame="
+				+ dtExame + ", observacao=" + observacao + ", resultadoExame=" + resultadoExame + ", idPaciente=" + "]";
 	}	
 	
 	

@@ -1,4 +1,4 @@
-package com.gfm.socexames.resources;
+package com.gfm.socexames.controller;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ import com.gfm.socexames.services.PacienteService;
 
 @RestController
 @RequestMapping("/exames")
-public class ExamePacienteResource {	
+public class ExamePacienteController {	
 	
 	
 
