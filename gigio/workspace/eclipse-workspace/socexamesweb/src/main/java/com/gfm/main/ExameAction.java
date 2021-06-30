@@ -6,7 +6,7 @@ import java.util.List;
 import com.gfm.main.entities.Paciente;
 import com.gfm.main.service.ExameService;
 
-public class HelloAction {
+public class ExameAction {
 
 	public String execute() {
 		ExameService exame = new ExameService();

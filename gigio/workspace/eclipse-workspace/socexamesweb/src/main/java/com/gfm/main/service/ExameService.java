@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import com.gfm.main.entities.ExamePaciente;
 import com.gfm.main.entities.Paciente;
 
 @Service
@@ -35,9 +36,18 @@ public class ExameService {
 				.bodyToMono(new ParameterizedTypeReference<List<Paciente>>() {})
 				.block();
 
-		return monoResponse;
+		return monoResponse;		
 		
-		
+	}
+	
+	public ExamePaciente exameById(Integer idExame) {
+		ExamePaciente monoResponse =  webClient.get()
+				.uri("/"+ idExame)
+				.retrieve()
+				.bodyToMono(ExamePaciente.class)
+				.block();
+
+		return monoResponse;	
 	}
 	
 	

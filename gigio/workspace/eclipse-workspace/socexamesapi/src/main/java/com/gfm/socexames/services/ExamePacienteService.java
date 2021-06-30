@@ -34,8 +34,12 @@ public class ExamePacienteService {
 		examePacienteDao.insert(idPaciente, examePaciente);
 	}
 	
-	public Paciente findById(Integer idPaciente) {	
+	public Paciente findByIdPaciente(Integer idPaciente) {	
 		return examePacienteDao.findByPaciente(idPaciente);
+	}	
+	
+	public ExamePaciente findByIdExame(Integer idPaciente) {	
+		return examePacienteDao.findById(idPaciente);
 	}	
 	
 	public void delete(Integer idExamePaciente) {

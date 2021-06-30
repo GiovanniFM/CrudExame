@@ -26,7 +26,7 @@ public class ExamePacienteController {
 	@GetMapping(value = "/paciente/{idPaciente}")
 	public ResponseEntity<Paciente> examesPaciente(@PathVariable Integer idPaciente) {
 		ExamePacienteService pacienteService = new ExamePacienteService();				
-		return ResponseEntity.ok().body(pacienteService.findById(idPaciente));
+		return ResponseEntity.ok().body(pacienteService.findByIdPaciente(idPaciente));
 
 	}	
 
@@ -44,6 +44,13 @@ public class ExamePacienteController {
 		examePacienteService.insertExames(paciente.getIdPaciente(), paciente.getExamePacienteVO());		
 		return ResponseEntity.ok().body(paciente);
 	}
+	
+	@GetMapping(value = "/{idExamePaciente}")
+	public ResponseEntity<ExamePaciente> carregarExame(@PathVariable Integer idExamePaciente){
+		ExamePacienteService examePacienteService = new ExamePacienteService();
+		ExamePaciente examePaciente = examePacienteService.findByIdExame(idExamePaciente);		
+		return ResponseEntity.ok().body(examePaciente);
+	}	
 	
 	@PutMapping(value = "/")
 	public ResponseEntity<ExamePaciente> update(@RequestBody ExamePaciente examePaciente){
