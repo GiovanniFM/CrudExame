@@ -7,5 +7,7 @@
     <p>Hello <s:property value="nmCliente"/> ! </p>
     
     <p>nmExame é <s:property value="nmExame"/> ! </p>
+    
+    <p>observação do exame: <s:property value="observacaoExame"/> ! </p>
   </body>
 </html>
